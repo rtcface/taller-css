@@ -4,13 +4,13 @@ const { src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 
 const css = (done) => {
-  src("src/scss/App.scss")
+  src("src/scss/app.scss")
     .pipe(
       sass({
         outputStyle: "expanded",
       })
     )
-    .pipe(dest("main-css/css"));
+    .pipe(dest("src/main-css/css"));
   done();
 };
 
