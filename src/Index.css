@@ -1,0 +1,54 @@
+:root {
+  --blanco: #ffffff;
+  --primary: #75cfb8;
+  --secondary: #bbdfc8;
+  --third: #f0e5d8;
+  --fourid: #ffc478;
+  --main-font: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  margin: 2rem 0;
+}
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 4.6rem;
+}
+h3 {
+  font-size: 3rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+[class$="__container"] {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 90%;
+}
+[class$="__heading"] {
+  text-align: center;
+  margin-bottom: 5rem;
+}

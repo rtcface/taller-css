@@ -1,0 +1,59 @@
+body {
+  background-image: url("https://img.freepik.com/vector-gratis/diseno-fondo-abstracto-blanco_23-2148825582.jpg?w=826&t=st=1687818410~exp=1687819010~hmac=521209d84825d407aa9f2b70c52b31b6dfa63664c8c62095f0f8bb30127eaa50");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 95vh;
+}
+.login {
+  width: 21rem;
+  height: 21rem;
+  background: var(--primary);
+  border-radius: 10%;
+  transition: all 0.5s;
+  opacity: 20%;
+  box-shadow: 0.5rem 0.5rem 0.2rem var(--secondary);
+}
+.login:hover {
+  transform: translateY(-1rem);
+  background: var(--secondary);
+  box-shadow: 0.5rem 0.5rem 0.2rem var(--primary);
+}
+.form-login {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  height: 85%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-footer {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0.2rem var(--primary);
+  transition: all 0.5s;
+}
+.button:hover {
+  transform: translateY(-1rem);
+  background: var(--fourid);
+}
+
+.usr-login {
+  width: 75%;
+  height: auto;
+}
+
+.pwd-login {
+  width: 75%;
+  height: auto;
+}

@@ -1,0 +1,38 @@
+.nucleus {
+  margin: 3rem;
+}
+
+.nucleus__grid {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .nucleus__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 5rem;
+    align-items: center;
+  }
+}
+
+.list__item {
+  box-shadow: 0px 0px 15px 3px rgb(0 0 0 / 0.15);
+  padding: 2rem;
+  margin-bottom: 5rem;
+  transition: all;
+  transition-duration: 300ms;
+  background-color: var(--secondary);
+}
+.list__item:hover {
+  transform: scale(1.1);
+}
+.list__heading {
+  font-size: 3rem;
+  color: var(--primary);
+  margin: 0;
+}
+.list__text {
+  margin: 0;
+  font-size: 2rem;
+}

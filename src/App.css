@@ -1,0 +1,77 @@
+body {
+  --Item-zize: 100px;
+}
+
+.container-one {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background: indigo;
+  box-shadow: 50px 50px 50px #111a;
+  height: 300px;
+  width: 800px;
+}
+
+.item:hover {
+  transform: translateY(-100px);
+  background: rgb(158, 26, 26);
+}
+
+.item {
+  height: var(--Item-zize);
+  width: var(--Item-zize);
+  transition: all 1s;
+  background: gray;
+  border-radius: 15px;
+}
+
+.container-two {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+
+  background: indianred;
+  height: 800px;
+  width: 800px;
+}
+
+.container-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1fr;
+  width: 600px;
+  height: 600px;
+  background: gray;
+}
+.react-img {
+  width: 100px;
+  height: 100px;
+  clip-path: circle(50% at 50% 50%);
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate3d(300px, 1000px, 1800px) scale(-1);
+    background: #f6ffde;
+  }
+
+  50% {
+    transform: translate3d(200px, 500px, 900px) scale(1.5);
+    background: #e3f2c1;
+  }
+
+  75% {
+    transform: translate3d(100px, 250px, 450px) scale(1.8);
+    background: #c9dbb2;
+  }
+
+  100% {
+    transform: translate3d(10px, 25px, 45px) scale(2);
+    opacity: 45%;
+    background: #aac8a7;
+  }
+}
