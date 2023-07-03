@@ -7,6 +7,7 @@
   - [Compilar el gulpfile](#compilar-el-gulpfile)
   - [Mapear el css compilado](#mapear-el-css-compilado)
   - [Agregar un watch](#agregar-un-watch)
+  - [Agregar Autoprefixer y postcss](#agregar-autoprefixer-y-postcss)
   - [Incorporar los elementos basicos](#incorporar-los-elementos-basicos)
   
 ---
@@ -136,6 +137,16 @@
     // eslint-disable-next-line no-undef
     exports.default = dev;
 
+    ```
+
+---
+
+## Agregar Autoprefixer y postcss
+
+1. Agregar dependencias
+
+    ```bash
+    yarn add -D autoprefixer gulp-postcss     
     ```
 
 ---
