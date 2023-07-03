@@ -15,8 +15,8 @@ const css = (done) => {
 };
 
 const dev = () => {
-  watch("src/scss");
+  watch("src/scss/app.scss", css);
 };
 
 // eslint-disable-next-line no-undef
-exports.default = css;
+exports.default = dev;

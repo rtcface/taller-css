@@ -6,6 +6,7 @@
   - [Creación del archivo gulp](#creación-del-archivo-gulp)
   - [Compilar el gulpfile](#compilar-el-gulpfile)
   - [Mapear el css compilado](#mapear-el-css-compilado)
+  - [Agregar un watch](#agregar-un-watch)
   - [Incorporar los elementos basicos](#incorporar-los-elementos-basicos)
   
 ---
@@ -89,7 +90,7 @@
     gulp css
     ```
 
-- Opcion 2
+- Opcion 2:
 
     ```console
     gulp -f gulpfile.cjs    
@@ -103,6 +104,38 @@
 
     ```js
     import './src/main-css/css/app.css'
+    ```
+
+---
+
+## Agregar un watch
+
+- Agregar un watch ejemplo basico
+
+    ```js
+    // eslint-disable-next-line no-undef
+    const { src, dest, watch } = require("gulp");
+    // eslint-disable-next-line no-undef
+    const sass = require("gulp-sass")(require("sass"));
+
+    const css = (done) => {
+    src("src/scss/app.scss")
+        .pipe(
+        sass({
+            outputStyle: "expanded",
+        })
+        )
+        .pipe(dest("src/main-css/css"));
+    done();
+    };
+
+    const dev = () => {
+    watch("src/scss/app.scss", css);
+    };
+
+    // eslint-disable-next-line no-undef
+    exports.default = dev;
+
     ```
 
 ---

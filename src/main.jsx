@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './Normalize.css'
-import './Index.css'
+import './main-css/css/app.css'
 import { Master } from './pages/Master'
 
 
