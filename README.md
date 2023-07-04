@@ -8,6 +8,8 @@
   - [Mapear el css compilado](#mapear-el-css-compilado)
   - [Agregar un watch](#agregar-un-watch)
   - [Agregar Autoprefixer y postcss](#agregar-autoprefixer-y-postcss)
+  - [Tareas por default ( **series, parallel** )](#tareas-por-default--series-parallel-)
+  - [Organizar nuestro codigo por carpetas en sass](#organizar-nuestro-codigo-por-carpetas-en-sass)
   - [Incorporar los elementos basicos](#incorporar-los-elementos-basicos)
   
 ---
@@ -143,10 +145,68 @@
 
 ## Agregar Autoprefixer y postcss
 
-1. Agregar dependencias
+1. Permiten hacer compatible nuestro css con navegadores que no soportan nuevas caracteristicas de css.
+
+2. Agregar dependencias
 
     ```bash
     yarn add -D autoprefixer gulp-postcss     
+    ```
+
+3. Para usarlo se debe de agregar al src el siguiente pipe.
+
+    ```js
+    // eslint-disable-next-line no-undef
+    const postcss = require("gulp-postcss");
+    // eslint-disable-next-line no-undef
+    const autoprefixer = require("autoprefixer");
+
+    .pipe(postcss([autoprefixer()]))
+    ```
+
+4. Modificar el packjson y agregar la siguientes lineas:
+
+    ```json
+    "browserslist":[
+        "last 1 version",
+        "> 1%"
+    ]
+    ```
+
+    Esto perimite  crear codigo de css compatible con todos los navegadores que como minimo se usen un 1% sobre su ultima version.
+
+---
+
+## Tareas por default ( **series, parallel** )
+
+1. Nospermite ejecutar multiples tareas en serie o paralelo y se declaran alfinal del gulpfile de la siguiente manera:
+
+    ```js
+    // eslint-disable-next-line no-undef
+    const { src, dest, watch, series, parallel } = require("gulp");
+
+    // eslint-disable-next-line no-undef
+    exports.default = series(css, dev);
+    ```
+
+   nota [^1]: Siempre deja al final la tarea que tiene el watch alfinal para que se ejecuten todas las tareas
+
+---
+
+## Organizar nuestro codigo por carpetas en sass
+
+1. En Sass podemos crear por cada componente una carpeta y dentro de ella los archivos sass que necesitemos para dicho componente solo agregado al nombre del archivo un guion bajo al inicio para que pueda ser incluido dentro de otro por ejemplo: _header.scss y en el archivo principal para incluir dichas hojas debemos incluir lo siguiente:
+
+    ```css
+    @use 'header/header'; /* 'Aca va la ruta de la hoja.scss' */
+    ```
+
+2. Modificar nuestro gulpfile en la funcion del watch para que contemple todos los cambios en las hojas scss
+
+    ```js
+    const dev = () => {
+        watch("src/scss/**/*.scss", css);
+    };
     ```
 
 ---
