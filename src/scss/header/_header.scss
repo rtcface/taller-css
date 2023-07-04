@@ -1,1 +1,28 @@
 @use 'base/variables' as v;
+
+.header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: v.$separation 0;
+    position: relative;
+}
+.header .container-header {
+    position: relative;
+}
+.header:before {
+    background-color: v.$black;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: .6;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.header__bar{
+    display: flex;
+    flex-direction: column;
+}
+.header_inicio {
+    background-image: url(../../assets/img/header_inicio.jpg);
+}

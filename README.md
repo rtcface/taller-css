@@ -11,6 +11,7 @@
   - [Tareas por default ( **series, parallel** )](#tareas-por-default--series-parallel-)
   - [Organizar nuestro codigo por carpetas en sass](#organizar-nuestro-codigo-por-carpetas-en-sass)
   - [Incorporar los elementos basicos](#incorporar-los-elementos-basicos)
+  - [Gulp con imagenes](#gulp-con-imagenes)
   
 ---
 
@@ -227,6 +228,28 @@
     ```scss
         @use 'base';
         @use 'header';
+    ```
+
+---
+
+## Gulp con imagenes
+
+1. Instalación de dependencias.
+
+    ```console
+    yarn add -D gulp-imagemin
+    ```
+
+2. Se agrega la dependencia en el file gulp imagemin
+
+   ```js
+
+   ```
+
+3. Se agrega la tarea para trabajar con imagenes
+
+    ```js
+    const imagemin = require('gulp-imagemin');    
     ```
 
 ---
