@@ -213,4 +213,20 @@
 
 ## Incorporar los elementos basicos
 
+1. Una vez que gulp ya compila todos los archivos scss podemos crear carpetas por componentes y para facilitar el uso de las hojas de scss en cada carpeta de componente podemos crear un _index.scss para enlazar todas las hojas dentro de esa carpeta por ejemplo:
+
+    ```scss
+        @forward 'normalize';
+        @forward 'variables';
+        @forward 'globales';
+        @forward 'utils';
+    ```
+
+2. Incluir las hojas al main.scss de la siguiente forma.
+
+    ```scss
+        @use 'base';
+        @use 'header';
+    ```
+
 ---
